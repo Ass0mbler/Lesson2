@@ -8,22 +8,20 @@ public class Task4 {
 
         // Заполнить массив сгенерированными числами, как в задаче номер 3.
         for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random() * (maxValue - minValue + 1) + minValue);
+            array[i] = (int) (Math.random() * (maxValue - minValue + 2) + minValue);
         }
 
         for (int num : array) {
             System.out.println(num);
-
-            if (num <= 1) {
+            if (num <= 1) {  // здесь проверяется является ли каждый элемент массива array меньшим или равным 1
                 System.out.println(false);
                 continue;
             }
 
             boolean isPrime = true;
-            for (int j = 2; j <= Math.sqrt(num); j++) {
+            for (int j = 2; j <= array.length; j++) {
                 if (num % j == 0) {
                     isPrime = false;
-                    break;
                 }
             }
 

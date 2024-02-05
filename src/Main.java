@@ -19,16 +19,14 @@ public class Main {
 
 
     private static int[] sortingTwoArrays(int[] array1, int[] array2) {
-        int length = array1.length;
-        int length2 = array2.length;
-        int[] result = new int[length + length2];
+        int[] result = new int[array1.length + array2.length];
 
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i <  array1.length; i++) {
             result[i] = array1[i];
         }
 
-        for (int i = 0; i < length2; i++) {
-            result[length + i] = array2[i];
+        for (int i = 0; i < array2.length; i++) {
+            result[array1.length + i] = array2[i];
         }
 
         int n = result.length;

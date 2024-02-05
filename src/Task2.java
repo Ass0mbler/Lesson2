@@ -8,16 +8,19 @@ public class Task2 {
         System.out.println("Вы ввели " + count(words) + " слов");
     }
 
-    private static int count(String input){
+    private static int count(String input) {
         String trimmedInput = input.trim();
-        if (trimmedInput.isEmpty()){
+        if (trimmedInput.isEmpty()) {
             return 0;
         }
+        try {
+            String[] resultTrimmed = trimmedInput.split("\\s");
+            Arrays.toString(resultTrimmed);
+            return resultTrimmed.length;
+        } catch (RuntimeException e) {
+        }
 
-        String[] resultTrimmed = trimmedInput.split("\\s");
-        System.out.println(Arrays.toString(resultTrimmed));
 
-
-        return resultTrimmed.length;
+        return 0;
     }
 }

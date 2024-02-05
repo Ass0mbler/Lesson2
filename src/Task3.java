@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Task3 {
@@ -5,13 +6,11 @@ public class Task3 {
         int[] array = new int[20];
         int maxValue = 100;
         int minValue = -100;
-        IntStream.range(minValue, maxValue).forEach(System.out::println);
-        System.out.println(Math.random());
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] < minValue){
-                minValue = array[i];
-            }
+        Random random = new Random();
+            for (int i = 1; i < array.length; i++) {
+                array[i] = random.nextInt(maxValue - minValue + 1) + minValue;
         }
+
         System.out.println("минимальное число: " + minValue);
 
         for (int i = 1; i < array.length; i++) {
